@@ -1,0 +1,77 @@
+/* TaskList.css */
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px;
+  flex: 1 0 calc(33.33% - 20px); /* Distribute available space with a maximum of three cards in a row */
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+li:hover {
+  background-color: #f5f5f5;
+}
+
+li div {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+button:hover {
+  background-color: #45a049;
+  color: #fff;
+}
+
+strong {
+  display: block;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+li.completed strong {
+  color: #888;
+}
+
+/* Media Query for responsiveness */
+@media screen and (max-width: 600px) {
+  li {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  li {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+/* Additional media query for larger screens */
+@media screen and (min-width: 901px) {
+  li {
+    flex-basis: calc(33.33% - 20px);
+  }
+}
